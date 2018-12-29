@@ -1,1 +1,28 @@
 <h1>svelte-store-reduce</h1>
+
+<p>Current Count: {$state.count}</p>
+<button on:click={decrement}>-</button>
+<button on:click={increment}>+</button>
+<button on:click={reset}>Reset</button>
+
+<script>
+  import { reduce } from '../../';
+
+  const initial = { count: 0 };
+  const state = reduce((state, action) => {
+    switch (action.type) {
+      case 'reset':
+        return initial;
+      case 'increment':
+        return { count: state.count + 1 };
+      case 'decrement':
+        return { count: state.count - 1 };
+      default:
+        return state;
+    }
+  }, initial);
+
+  const increment = () => state.dispatch({ type: 'increment' });
+  const decrement = () => state.dispatch({ type: 'decrement' });
+  const reset = () => state.dispatch({ type: 'reset' });
+</script>
