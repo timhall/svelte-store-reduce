@@ -1,0 +1,41 @@
+{
+  "name": "svelte-store-reduce",
+  "version": "0.0.0",
+  "author": "Tim Hall <tim.hall.engr@gmail.com>",
+  "license": "MIT",
+  "description": "Use redux style reducers with svelte reactive stores",
+  "repository": "https://github.com/timhall/svelte-store-reduce.git",
+  "module": "dist/svelte-store-reduce.es.js",
+  "main": "dist/svelte-store-reduce.cjs.js",
+  "scripts": {
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build",
+    "preexample": "npm run build",
+    "example": "cd example && rollup -c",
+    "pretest": "npm run build",
+    "test": "ava"
+  },
+  "peerDependencies": {
+    "svelte": "^3.0.0-alpha9"
+  },
+  "devDependencies": {
+    "ava": "^1.0.1",
+    "rollup": "^1.0.0",
+    "rollup-plugin-buble": "^0.19.6",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-filesize": "^2.0.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-svelte": "^4.5.0",
+    "svelte": "^3.0.0-alpha9"
+  },
+  "keywords": [
+    "svelte",
+    "reactive",
+    "store",
+    "reduce",
+    "reducer"
+  ],
+  "files": [
+    "dist"
+  ]
+}
